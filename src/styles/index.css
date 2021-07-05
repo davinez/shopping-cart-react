@@ -1,0 +1,132 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; /* Universal Box Sizing with Inheritance */
+}
+
+body {
+  background-color: rgb(228, 224, 220);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+  ========================================
+  Navbar
+  ========================================
+*/
+
+.logo {
+  font-size: 2.4rem;
+}
+
+.top-navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(100, 95, 68);
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+/*
+  ========================================
+  Items Container
+  ========================================
+*/
+
+.shop-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.item-card {
+  width: 30%;
+  height: 24rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.items-images {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+}
+
+/*
+  ========================================
+  Media Query
+  ========================================
+*/
+
+@media (max-width: 768px) {
+  .item-card {
+    width: 80%;
+  }
+
+  .shop-container {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
