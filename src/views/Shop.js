@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 
 const Shop = () => {
   const { items, cart } = useContext(ShopContext);
+  //Destructuring from pair value-Setter function [itemData, setItemData]
   const [itemData] = items;
   const [shoppingCart, setShoppingCart] = cart;
+
+  //Destructuring useRouteMatch() return object
+  const { url } = useRouteMatch();
 
   const addToCart = (item) => {
     setShoppingCart([...shoppingCart, item]);
@@ -14,7 +19,12 @@ const Shop = () => {
     return (
       <div className="item-card" key={item.id}>
         <h3>{item.name}</h3>
-        <img className="items-images" src={item.url} alt="A Spaceship" />
+
+        {/* router hook 'useRouteMatch' */}
+        <Link to={`${url}/${item.id}`}>
+          <img className="items-images" src={item.url} alt="A Spaceship" />
+        </Link>
+
         <p>
           <strong>Class:</strong> {item.class}
         </p>

@@ -1,34 +1,24 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, createContext } from 'react';
+import { data } from '../data';
 
 // Create Context Object
 export const ShopContext = createContext();
 
 // Create a provider for components to consume and subscribe to changes
 export const ShopContextProvider = (props) => {
-  const [items, setItems] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
+  /* 'data' redundant assignment for "context API" testing,
+     instead of local data, "fetch" should be used.  */
+  const [items, setItems] = useState(data);
 
-  useEffect(() => {
-    async function fetchItems() {
-      const response = await fetch('../data.json', {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      });
-      const fetchedData = await response.json();
-      setItems(fetchedData);
-    }
-    fetchItems();
-  }, []);
+  // Make the context object:
+  const contextObject = {
+    items: [items, setItems],
+    cart: [shoppingCart, setShoppingCart],
+  };
 
   return (
-    <ShopContext.Provider
-      value={{
-        items: [items, setItems],
-        cart: [shoppingCart, setShoppingCart],
-      }}
-    >
+    <ShopContext.Provider value={contextObject}>
       {props.children}
     </ShopContext.Provider>
   );

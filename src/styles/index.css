@@ -108,10 +108,25 @@ a:active {
   gap: 0.5rem;
 }
 
+.item-card a {
+  display: block;
+  height: 40%;
+}
+
 .items-images {
   width: 100%;
-  height: 40%;
+  height: 100%;
   object-fit: cover;
+}
+
+/*
+  ========================================
+  Item Page
+  ========================================
+*/
+
+.item-page-card {
+  font-size: 10rem;
 }
 
 /*

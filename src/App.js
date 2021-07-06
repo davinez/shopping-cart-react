@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import Home from './views/Home';
 import About from './views/About';
 import Shop from './views/Shop';
+import { Item } from './views/Item';
 import { ShopContextProvider } from './context/ShopContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -13,9 +14,18 @@ const App = () => {
         <div className="App">
           <Nav />
           <Switch>
-            <Route exact path="/components/Home" component={Home} />
-            <Route exact path="/components/About" component={About} />
-            <Route exact path="/components/Shop" component={Shop} />
+            <Route exact path="/components/Home">
+              <Home />
+            </Route>
+            <Route exact path="/components/About">
+              <About />
+            </Route>
+            <Route exact path="/components/Shop">
+              <Shop />
+            </Route>
+            <Route exact path="/components/Shop/:id">
+              <Item />
+            </Route>
           </Switch>
         </div>
       </Router>
