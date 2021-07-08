@@ -73,7 +73,7 @@ a:active {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
+  min-height: 3.2rem;
   background: rgb(100, 95, 68);
 }
 
@@ -83,6 +83,12 @@ a:active {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+}
+
+.cart-navbar {
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
 }
 
 /*
@@ -97,6 +103,7 @@ a:active {
   flex-flow: row wrap;
   justify-content: center;
   gap: 1.5rem;
+  margin-top: 3.5rem;
 }
 
 .item-card {
@@ -126,7 +133,24 @@ a:active {
 */
 
 .item-page-card {
-  font-size: 10rem;
+  width: 35%;
+  height: 24rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.4rem;
+  margin: 3.5rem auto;
+}
+
+/*
+  ========================================
+  Cart Container
+  ========================================
+*/
+
+.cart-container {
+  margin-top: 3.5rem;
+  font-size: 1.1rem;
 }
 
 /*
@@ -143,5 +167,9 @@ a:active {
   .shop-container {
     flex-flow: column nowrap;
     align-items: center;
+  }
+
+  .item-page-card {
+    width: 60%;
   }
 }

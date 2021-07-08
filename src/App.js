@@ -4,6 +4,7 @@ import Home from './views/Home';
 import About from './views/About';
 import Shop from './views/Shop';
 import { Item } from './views/Item';
+import { Cart } from './views/Cart';
 import { ShopContextProvider } from './context/ShopContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -25,6 +26,9 @@ const App = () => {
             </Route>
             <Route exact path="/components/Shop/:id">
               <Item />
+            </Route>
+            <Route exact path="/components/Cart">
+              <Cart />
             </Route>
           </Switch>
         </div>

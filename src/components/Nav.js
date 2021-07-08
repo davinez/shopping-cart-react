@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 
 const Nav = () => {
-  const { cart } = useContext(ShopContext);
-  const [shoppingCart] = cart;
+  const { state } = useContext(ShopContext);
 
   return (
     <nav className="top-navbar">
@@ -22,7 +21,12 @@ const Nav = () => {
           <li>About</li>
         </Link>
       </ul>
-      <div>{shoppingCart.length}</div>
+      <Link to="/components/Cart">
+        <div className="cart-navbar">
+          <span>{state.cartItems.length}</span>
+          <img src="/images/cart4.svg" alt="A shopping cart icon" />
+        </div>
+      </Link>
     </nav>
   );
 };
