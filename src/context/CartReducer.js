@@ -13,12 +13,9 @@ export const cartTotal = (cartItems) => {
 export const CartReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
-      console.log(state);
       const newItem = { ...action.payload, quantity: 1 };
-
       return {
         ...state,
-        ...cartTotal([...state.cartItems, newItem]),
         cartItems: [...state.cartItems, newItem],
       };
 
@@ -52,16 +49,17 @@ export const CartReducer = (state, action) => {
         ),
       };
 
-    case 'CHECKOUT':
-      return {
-        ...state,
-        cartItems: [],
-        checkout: true,
-      };
     case 'CLEAR':
       return {
         cartItems: [],
       };
+
+    case 'UPDATE_TOTAL':
+      return {
+        ...state,
+        ...cartTotal([...state.cartItems]),
+      };
+
     default:
       return state;
   }

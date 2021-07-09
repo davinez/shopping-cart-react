@@ -11,10 +11,11 @@ const Shop = () => {
   const itemsCards = items.map((item) => {
     return (
       <div className="item-card" key={item.id}>
-        <h3>{item.name}</h3>
-
-        {/* router hook 'useRouteMatch' */}
         <Link to={`${url}/${item.id}`}>
+          <p className="item-name">{item.name}</p>
+        </Link>
+        {/* router hook 'useRouteMatch' */}
+        <Link to={`${url}/${item.id}`} className="images-link-container">
           <img className="items-images" src={item.url} alt="A Spaceship" />
         </Link>
 
@@ -40,7 +41,7 @@ const Shop = () => {
 
   return (
     <>
-      <div className="shop-container">{itemsCards}</div>
+      <main className="shop-container">{itemsCards}</main>
     </>
   );
 };

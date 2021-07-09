@@ -4,11 +4,10 @@ import { ShopContext } from '../context/ShopContext';
 
 const Nav = () => {
   const { state } = useContext(ShopContext);
-
   return (
     <nav className="top-navbar">
       <Link to="/components/Home">
-        <h1 className="logo">DavoWorld</h1>
+        <p className="logo">DavoWorld</p>
       </Link>
       <ul className="nav-links">
         <Link to="/components/Home">
@@ -21,9 +20,9 @@ const Nav = () => {
           <li>About</li>
         </Link>
       </ul>
-      <Link to="/components/Cart">
+      <Link to="/components/Cart" className="cart-navbar-container">
         <div className="cart-navbar">
-          <span>{state.cartItems.length}</span>
+          <span>{state.itemCount}</span>
           <img src="/images/cart4.svg" alt="A shopping cart icon" />
         </div>
       </Link>

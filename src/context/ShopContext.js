@@ -2,9 +2,9 @@ import { useState, useReducer, createContext } from 'react';
 import { data } from '../data';
 import { CartReducer, cartTotal } from './CartReducer';
 
-// Create Context Object
 export const ShopContext = createContext();
 
+// {itemCount, total} => ...cartTotal
 const initialState = { cartItems: [], ...cartTotal([]) };
 
 // Create a provider for components to consume and subscribe to changes
@@ -34,6 +34,10 @@ export const ShopContextProvider = (props) => {
     dispatch({ type: 'CLEAR' });
   };
 
+  const updateTotal = () => {
+    dispatch({ type: 'UPDATE_TOTAL' });
+  };
+
   // Make the context object:
   const contextObject = {
     items,
@@ -43,6 +47,7 @@ export const ShopContextProvider = (props) => {
     decrease,
     removeProduct,
     clearCart,
+    updateTotal,
     state,
   };
   // 'state' refers to the values declare in 'initialState'

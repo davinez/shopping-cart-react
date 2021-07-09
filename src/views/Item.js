@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 
 export const Item = () => {
-  const { items, addProduct, increase, state } = useContext(ShopContext);
+  const { items, addProduct, increase, updateTotal, state } =
+    useContext(ShopContext);
   const { id } = useParams();
 
   //Assign Object of array to show in current "item page"
@@ -13,11 +14,12 @@ export const Item = () => {
     state.cartItems.some((x) => x.id === item.id)
       ? increase(state.cartItems.find((x) => x.id === item.id))
       : addProduct(item);
+    updateTotal();
   };
 
   return (
-    <div className="item-page-card">
-      <h3>{item.name}</h3>
+    <main className="item-page-card">
+      <p className="item-name">{item.name}</p>
       <img className="items-images" src={item.url} alt="A Spaceship" />
       <p>
         <strong>Class:</strong> {item.class}
@@ -35,7 +37,9 @@ export const Item = () => {
         <strong>Price:</strong>{' '}
         {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
       </p>
-      <button onClick={() => checkCart(item)}>Add to Cart</button>
-    </div>
+      <button className="item-page-btn" onClick={() => checkCart(item)}>
+        Add to Cart
+      </button>
+    </main>
   );
 };
