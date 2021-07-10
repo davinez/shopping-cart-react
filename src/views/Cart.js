@@ -57,7 +57,10 @@ export const Cart = () => {
             -
           </button>
           <button onClick={() => handleButtons(item, 'delete')}>
-            <img src="/images/trash.svg" alt="A trash can icon" />
+            <img
+              src={process.env.PUBLIC_URL + '/images/trash.svg'}
+              alt="A trash can icon"
+            />
           </button>
         </div>
       </div>
@@ -78,7 +81,7 @@ export const Cart = () => {
             </p>
             <div className="cart-total-btns-container">
               <button onClick={() => clear()}>
-                <Link to="/components/Checkout">Checkout</Link>
+                <Link to="/Checkout">Checkout</Link>
               </button>
               <button onClick={() => clear()}>Clear</button>
             </div>

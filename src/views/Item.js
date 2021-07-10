@@ -20,7 +20,11 @@ export const Item = () => {
   return (
     <main className="item-page-card">
       <p className="item-name">{item.name}</p>
-      <img className="items-images" src={item.url} alt="A Spaceship" />
+      <img
+        className="items-images"
+        src={process.env.PUBLIC_URL + item.url}
+        alt="A Spaceship"
+      />
       <p>
         <strong>Class:</strong> {item.class}
       </p>

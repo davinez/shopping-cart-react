@@ -17,22 +17,22 @@ const App = () => {
         <div className="App">
           <Nav />
           <Switch>
-            <Route exact path="/components/Home">
+            <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/components/About">
+            <Route exact path="/About">
               <About />
             </Route>
-            <Route exact path="/components/Shop">
+            <Route exact path="/Shop">
               <Shop />
             </Route>
-            <Route exact path="/components/Shop/:id">
+            <Route exact path="/Shop/:id">
               <Item />
             </Route>
-            <Route exact path="/components/Cart">
+            <Route exact path="/Cart">
               <Cart />
             </Route>
-            <Route exact path="/components/Checkout">
+            <Route exact path="/Checkout">
               <Checkout />
             </Route>
           </Switch>

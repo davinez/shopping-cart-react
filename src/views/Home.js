@@ -6,7 +6,7 @@ const Home = () => {
       <div className="home-image-container">
         <img
           className="home-image"
-          src="/images/space.jpg"
+          src={process.env.PUBLIC_URL + '/images/space.jpg'}
           alt="A world space view"
         />
       </div>

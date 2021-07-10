@@ -388,6 +388,10 @@ a:active {
     gap: 1rem;
   }
 
+  .nav-links {
+    gap: 1.4rem;
+  }
+
   /*
   ========================================
   Shop Page

@@ -10,7 +10,7 @@ export const Footer = () => {
       >
         <img
           className="github-image"
-          src="/images/github.svg"
+          src={process.env.PUBLIC_URL + '/images/github.svg'}
           alt="github icon"
         />
       </a>

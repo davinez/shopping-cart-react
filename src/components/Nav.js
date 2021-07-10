@@ -6,24 +6,27 @@ const Nav = () => {
   const { state } = useContext(ShopContext);
   return (
     <nav className="top-navbar">
-      <Link to="/components/Home">
+      <Link to="/">
         <p className="logo">DavoWorld</p>
       </Link>
       <ul className="nav-links">
-        <Link to="/components/Home">
+        <Link to="/">
           <li>Home</li>
         </Link>
-        <Link to="/components/Shop">
+        <Link to="/Shop">
           <li>Shop</li>
         </Link>
-        <Link to="/components/About">
+        <Link to="/About">
           <li>About</li>
         </Link>
       </ul>
-      <Link to="/components/Cart" className="cart-navbar-container">
+      <Link to="/Cart" className="cart-navbar-container">
         <div className="cart-navbar">
           <span>{state.itemCount}</span>
-          <img src="/images/cart4.svg" alt="A shopping cart icon" />
+          <img
+            src={process.env.PUBLIC_URL + '/images/cart4.svg'}
+            alt="A shopping cart icon"
+          />
         </div>
       </Link>
     </nav>

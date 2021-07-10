@@ -16,7 +16,11 @@ const Shop = () => {
         </Link>
         {/* router hook 'useRouteMatch' */}
         <Link to={`${url}/${item.id}`} className="images-link-container">
-          <img className="items-images" src={item.url} alt="A Spaceship" />
+          <img
+            className="items-images"
+            src={process.env.PUBLIC_URL + item.url}
+            alt="A Spaceship"
+          />
         </Link>
 
         <p>
