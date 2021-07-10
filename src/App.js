@@ -8,12 +8,12 @@ import { Item } from './views/Item';
 import { Cart } from './views/Cart';
 import { Checkout } from './views/Checkout';
 import { ShopContextProvider } from './context/ShopContext';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
   return (
     <ShopContextProvider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Nav />
           <Switch>
