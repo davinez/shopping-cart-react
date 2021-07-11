@@ -8,7 +8,7 @@ import { Item } from './views/Item';
 import { Cart } from './views/Cart';
 import { Checkout } from './views/Checkout';
 import { ShopContextProvider } from './context/ShopContext';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
   return (
