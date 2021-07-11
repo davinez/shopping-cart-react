@@ -14,4 +14,4 @@ Project made to enforce my learning on React.
 
 ### Setup
 
-To run this project, just enter to davinez.github.io/shopping-cart-react/
+To run this project, just enter to https://shopping-cart-davoworld.herokuapp.com/
